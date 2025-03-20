@@ -1,5 +1,7 @@
 
-body {
+html, body {
+  overflow-x: hidden;
+  width: 100%;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
 }
@@ -148,7 +150,7 @@ body {
   }
   
   /* Responsive Adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .home-header {
       font-size: 2.5rem;
     }
@@ -220,7 +222,7 @@ body {
   }
   
   /* Responsive Adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .service-card {
       margin-bottom: 20px;
     }
