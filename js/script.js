@@ -1,88 +1,31 @@
-// htmlcss progress circular bar 
-let htmlProgress = document.querySelector(".html-css"),
-  htmlValue = document.querySelector(".html-progress");
+const skills = [
+  { selector: ".html-css", progress: 95, color: "black" },
+  { selector: ".javascript", progress:75 , color: "#6f34fe" },
+  { selector: ".bootstrap", progress: 85, color: "saddlebrown" },
+  { selector: ".csharp", progress: 93, color: "aqua" },
+  { selector: ".sql", progress: 95, color: "darkmagenta" },
+  { selector: ".typescript", progress: 85, color: "darkolivegreen" },
+  { selector: ".net", progress: 90, color: "orangered" },
+  { selector: ".angularjs", progress: 75, color: "brown" },
+ {selector: ".winform", progress: 85, color: "aquamarine" }
+];
 
-let htmlStartValue = 0,
-  htmlEndValue = 90,
-  htmlspeed = 30;
+skills.forEach(skill => {
+  let progressElement = document.querySelector(skill.selector);
+  let valueElement = document.querySelector(`${skill.selector}-progress`);
+  let startValue = 0;
+  let speed = 30;
 
-let progresshtml = setInterval(() => {
-  htmlStartValue++;
+  let progressInterval = setInterval(() => {
+    startValue++;
+    valueElement.textContent = `${startValue}%`;
+    progressElement.style.background = `conic-gradient(${skill.color} ${startValue * 3.6}deg, #ededed 0deg)`;
 
-  htmlValue.textContent = `${htmlStartValue}%`;
-  htmlProgress.style.background = `conic-gradient(#fca61f ${
-    htmlStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (htmlStartValue == htmlEndValue) {
-    clearInterval(progresshtml);
-  }
-}, htmlspeed);
-
-// javasript progress circular bar 
-let javascriptProgress = document.querySelector(".javascript"),
-  javascriptValue = document.querySelector(".javascript-progress");
-
-let javascriptStartValue = 0,
-  javascriptEndValue = 75,
-  jsspeed = 30;
-
-let progressjs = setInterval(() => {
-  javascriptStartValue++;
-
-  javascriptValue.textContent = `${javascriptStartValue}%`;
-  javascriptProgress.style.background = `conic-gradient(#7d2ae8 ${
-    javascriptStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (javascriptStartValue == javascriptEndValue) {
-    clearInterval(progressjs);
-  }
-}, jsspeed);
-
-// php progress circular bar 
-let phpProgress = document.querySelector(".php"),
-  phpValue = document.querySelector(".php-progress");
-
-let phpStartValue = 0,
-  phpEndValue = 80,
-  phpspeed = 30;
-
-let progressphp = setInterval(() => {
-  phpStartValue++;
-
-  phpValue.textContent = `${phpStartValue}%`;
-  phpProgress.style.background = `conic-gradient(#20c997 ${
-    phpStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (phpStartValue == phpEndValue) {
-    clearInterval(progressphp);
-  }
-}, phpspeed);
-
-// reactjs progress circular bar 
-let reactProgress = document.querySelector(".reactjs"),
-  reactValue = document.querySelector(".reactjs-progress");
-
-let reactStartValue = 0,
-  reactEndValue = 30,
-  rjsspeed = 30;
-
-let progressreact = setInterval(() => {
-  reactStartValue++;
-
-  reactValue.textContent = `${reactStartValue}%`;
-  reactProgress.style.background = `conic-gradient(#3f396d ${
-    reactStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (reactStartValue == reactEndValue) {
-    clearInterval(progressreact);
-  }
-}, rjsspeed);
-
-
+    if (startValue === skill.progress) {
+      clearInterval(progressInterval);
+    }
+  }, speed);
+});
 // filter using javascript
 $(document).ready(function () {
   $(".filter-item").click(function () {
