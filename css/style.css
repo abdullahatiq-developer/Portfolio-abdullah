@@ -162,6 +162,10 @@ img, div, section {
     .home p {
       font-size: 1.1rem;
     }
+    .row {
+      margin: 0 auto; /* Center the row */
+      gap: 20px; /* Adds space between columns */
+    }
   }
   
 
@@ -243,6 +247,8 @@ img, div, section {
   
 
 /* skill section starts */
+
+
 .skill{
     background-color: rgb(234, 234, 249);
 }
@@ -280,6 +286,7 @@ img, div, section {
     font-size: 1.5rem;
     font-weight: 600;
 }
+
 .html-progress{
     color:black;
   
